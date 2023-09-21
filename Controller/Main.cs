@@ -8,9 +8,13 @@ namespace LogAnalysis.Controller
         public void Controller()
         {
             Analyzer analyzer = new Analyzer();
-            string feedback = analyzer.AnalyzeLogFile("C:\\Users\\zbc23emrb\\Documents\\GitHub\\LogAnalysis\\errorlog1.txt");
+
+            /// Analyzing file
+            string feedback = analyzer.AnalyzeLogFile("C:\\Users\\emreb\\Documents\\H1\\LogAnalysis\\errorlog1.txt"); // Copy full path of errorlog.txt in solution directory to test 3 different logs
 
             Database db = new Database();
+
+            /// Adding analysis data to list
             db.AddLogAnalysis(feedback);
 
             Gui gui = new Gui();

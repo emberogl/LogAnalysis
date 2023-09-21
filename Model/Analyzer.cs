@@ -1,5 +1,10 @@
 ﻿namespace LogAnalysis.Model
 {
+    /// <summary>
+    /// Retrieves all error codes in every line of error log,
+    /// adds those error codes to a list,
+    /// and delivers feedback based on which error codes appear
+    /// </summary>
     public class Analyzer
     {
         public string AnalyzeLogFile(string path)
@@ -10,6 +15,8 @@
             {
                 reader = new StreamReader(path);
                 string line;
+
+                /// While text file is not empty, do a foreach to find any error code that occurs in every line, and add it to a list
                 while ((line = reader.ReadLine()!) != null)
                 {
                     foreach (ErrorCodeHandler.ErrorCodes code in Enum.GetValues(typeof(ErrorCodeHandler.ErrorCodes))) {
@@ -19,7 +26,7 @@
                         }
                     }
                 }
-                return errorCodeHandler.GiveFeedback();
+                return errorCodeHandler.GiveFeedback(path); // The feedback delivered is based on which error codes occur
             }
             catch (FileNotFoundException) 
             {

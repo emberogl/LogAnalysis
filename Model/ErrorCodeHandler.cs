@@ -17,16 +17,19 @@
             errorCodes.Add(code);
         }
 
-        /// Lorem ipsum-grade nonsensical responses just for testing
-        public string GiveFeedback()
+        /// Meaningless feedback just for testing
+        public string GiveFeedback(string path)
         {
             if (errorCodes.Contains(ErrorCodes.D0) && errorCodes.Contains(ErrorCodes.D2) && errorCodes.Contains(ErrorCodes.D5)) 
             {
-                return "Server starts sucessfully, but db server fails to run first try, but runs second try.\n" +
+                return $"Log path: {path}\n" +
+                       "Server starts sucessfully, but db server fails to run first try, but runs second try.\n" +
                        "Eventually check if server is not set to auto-close.";
             }
             else if (errorCodes.Contains(ErrorCodes.D0) && errorCodes.Contains(ErrorCodes.D2) && errorCodes.Contains(ErrorCodes.D4)) {
-                return "Server starts successfully, but db server fails to run, even when trying to reconnect.\n" +
+                return
+                       $"Log path: {path}\n" +
+                       "Server starts successfully, but db server fails to run, even when trying to reconnect.\n" +
                        "Here are some possible reasons:\n"+
                        "Service account password was changed but not updated on db Server\n"+
                        "Startup Parameters have Incorrect File Path Locations\n"+
@@ -34,7 +37,8 @@
             }
             else
             {
-                return "Server and db server start successfully.";
+                return $"Log path: {path}\n" +
+                       "Server and db server start successfully.";
             } 
         }
     }

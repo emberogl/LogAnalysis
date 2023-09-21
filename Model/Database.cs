@@ -2,6 +2,9 @@
 
 namespace LogAnalysis.Model
 {
+    /// <summary>
+    /// "Database" to store analysis data, and output to console
+    /// </summary>
     public class Database
     {
         private List<string> _db = new List<string>();
