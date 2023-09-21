@@ -1,0 +1,5 @@
+[2023-09-21 14:52:23] INFO: Server started successfully. (D0)
+[2023-09-21 14:52:24] DEBUG: Connection pool initialized. (D1)
+[2023-09-21 14:52:25] ERROR: Failed to connect to Database. (D2)
+[2023-09-21 14:52:26] INFO: Attempting to reconnect. (D3)
+[2023-09-21 14:52:27] INFO: Connected to database successfully. (D5)
